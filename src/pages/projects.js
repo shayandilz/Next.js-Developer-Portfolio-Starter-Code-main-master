@@ -12,9 +12,9 @@ const FramerImage = motion(Image)
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return (
         <article
-            className={'w-full flex items-center justify-between rounded-3xl dark:text-light rounded-br-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark shadow-2xl p-12 relative'}>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark  dark:bg-light rounded-br-3xl'/>
-            <Link className={'w-1/2 cursor-pointer overflow-hidden rounded-lg'} href={link} target={'_blank'}>
+            className={'w-full flex items-center justify-between rounded-3xl dark:text-light rounded-br-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark shadow-2xl p-12 relative lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4'}>
+            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark  dark:bg-light rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]'/>
+            <Link className={'w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full'} href={link} target={'_blank'}>
                 <FramerImage
                     src={img}
                     title={title}
@@ -26,15 +26,15 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
             </Link>
-            <div className={'w-1/2 flex flex-col items-start justify-between pl-6'}>
-                <span className={'text-primary font-medium text-xl'}>{type}</span>
+            <div className={'w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6'}>
+                <span className={'text-primary font-medium text-xl xs:text-base'}>{type}</span>
                 <Link className={'hover:underline underline-offset-2'} href={link} target={'_blank'}>
-                    <h2 className={'my-2 w-full text-left text-4xl font-bold'}>{title}</h2>
+                    <h2 className={'my-2 w-full text-left text-4xl font-bold sm:text-sm'}>{title}</h2>
                 </Link>
-                <p className={'font-medium my-2 text-dark dark:text-light'}>{summary}</p>
+                <p className={'font-medium my-2 text-dark dark:text-light sm:text-sm'}>{summary}</p>
                 <div className={'mt-2 flex items-center'}>
                     <Link className={'w-10'} href={github} target={'_blank'}><GithubIcon/></Link>
-                    <Link className={'ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'} href={link}
+                    <Link className={'ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold sm:px-4 sm:text-base'} href={link}
                           target={'_blank'}>Visit Project</Link>
                 </div>
             </div>
@@ -44,8 +44,8 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
 const Project = ({title, type, img, link, github}) => {
     return (
         <article
-            className={'w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light dark:text-light bg-light dark:bg-dark p-6 relative'}>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl'/>
+            className={'w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light dark:text-light bg-light dark:bg-dark p-6 relative xs:p-4'}>
+            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]'/>
             <Link className={'w-full cursor-pointer overflow-hidden rounded-lg'} href={link} target={'_blank'}>
                 <FramerImage
                     src={img}
@@ -57,14 +57,14 @@ const Project = ({title, type, img, link, github}) => {
                 />
             </Link>
             <div className={'w-full flex flex-col items-start justify-between mt-4'}>
-                <span className={'text-primary font-medium text-xl'}>{type}</span>
+                <span className={'text-primary font-medium text-xl lg:text-lg md:text-base'}>{type}</span>
                 <Link className={'hover:underline underline-offset-2'} href={link} target={'_blank'}>
-                    <h2 className={'my-2 w-full text-left text-3xl font-bold'}>{title}</h2>
+                    <h2 className={'my-2 w-full text-left text-3xl font-bold lg:text-2xl sm:text-sm'}>{title}</h2>
                 </Link>
                 <div className={'w-full mt-2 flex items-center justify-between'}>
-                    <Link className={' text-lg font-semibold underline'} href={link}
+                    <Link className={' text-lg font-semibold underline md:text-base'} href={link}
                           target={'_blank'}>Visit Project</Link>
-                    <Link className={'w-8'} href={github} target={'_blank'}><GithubIcon/></Link>
+                    <Link className={'w-8 md:w-6'} href={github} target={'_blank'}><GithubIcon/></Link>
 
                 </div>
             </div>
@@ -80,8 +80,8 @@ const Projects = () => {
             </Head>
             <main className={'w-full mb-16 flex flex-col items-center justify-center'}>
                 <Layout className={'pt-16'}>
-                    <AnimatedText className={'mb-16'} text='Projects'/>
-                    <div className="grid grid-cols-12 gap-16 gap-y-16">
+                    <AnimatedText className={'mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'} text='Projects'/>
+                    <div className="grid grid-cols-12 gap-16 gap-y-16 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
                         <div className="col-span-12">
                             <FeaturedProject
                                 title={'Macan Website'}
@@ -92,7 +92,7 @@ const Projects = () => {
                                 github={'/'}
                             />
                         </div>
-                        <div className="col-span-6">
+                        <div className="col-span-6 sm:col-span-12">
                             <Project
                                 title={'Macan Website'}
                                 img={Project1}
@@ -101,7 +101,7 @@ const Projects = () => {
                                 github={'/'}
                             />
                         </div>
-                        <div className="col-span-6">
+                        <div className="col-span-6 sm:col-span-12">
                             <Project
                                 title={'Macan Website'}
                                 img={Project1}

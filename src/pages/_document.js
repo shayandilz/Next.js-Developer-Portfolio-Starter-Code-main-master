@@ -8,6 +8,7 @@ export default function Document() {
             <body>
             <Script strategy='beforeInteractive' id={'theme-switcher'}>
                 {`
+                console.log('test')
                     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                       document.documentElement.classList.add('dark')
                     } else {

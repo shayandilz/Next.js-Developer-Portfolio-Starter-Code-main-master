@@ -13,13 +13,13 @@ const AnimatedNumbers = ({value}) => {
     const isInView = useInView(ref, {once: true})
 
     useEffect(() => {
-        if (isInView){
+        if (isInView) {
             motionValue.set(value)
         }
-    },[isInView, motionValue, value])
+    }, [isInView, motionValue, value])
     useEffect(() => {
         springValue.on('change', (latest) => {
-            if (ref.current && latest.toFixed(0) <= value){
+            if (ref.current && latest.toFixed(0) <= value) {
                 ref.current.textContent = latest.toFixed(0)
             }
         })
@@ -38,46 +38,50 @@ const About = () => {
             </Head>
             <main className={'w-full flex flex-col justify-center items-center dark:text-light'}>
                 <Layout className={'pt-16'}>
-                    <AnimatedText text='My About page' />
-                    <div className={'grid w-full grid-cols-8 gap-16 py-2'}>
-                        <div className={'col-span-3 flex flex-col justify-start items-start'}>
+                    <AnimatedText className={'mb-16 lg:!text-7xl sm:!text-5xl xs:!text-4xl sm:mb:8'} text='My About page'/>
+                    <div className={'grid w-full grid-cols-8 gap-16 sm:gap-8 py-2'}>
+                        <div className={'col-span-3 flex flex-col justify-start items-start xl:col-span-4 md:col-span-8'}>
                             <h2 className={'mb-4 text-lg font-bold uppercase'}>Bio</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid aperiam blanditiis consequatur consequuntur eos esse, ex explicabo fugit, illum iste iusto laborum molestias nesciunt omnis quas quasi, saepe tempore.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid aperiam
+                                blanditiis consequatur consequuntur eos esse, ex explicabo fugit, illum iste iusto
+                                laborum molestias nesciunt omnis quas quasi, saepe tempore.
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eveniet facilis iste laboriosam molestias nobis nulla odit officiis repellat veniam. Blanditiis cumque delectus eius ipsam iusto praesentium, quisquam totam veritatis.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eveniet facilis iste
+                                laboriosam molestias nobis nulla odit officiis repellat veniam. Blanditiis cumque
+                                delectus eius ipsam iusto praesentium, quisquam totam veritatis.
                             </p>
                         </div>
-                        <div className="col-span-2 flex flex-col gap-16 justify-between items start">
-                            <div className={'flex flex-col'}>
-                                <span className={'text-6xl font-bold'}>
-                                    <AnimatedNumbers value={50} />+
+                        <div className="col-span-2 xl:col-span-8 xl:flex-row xl:items-center flex flex-col gap-16 justify-between items-start">
+                            <div className={'flex flex-col items-end justify-center xl:items-center'}>
+                                <span className={'text-6xl font-bold md:text-6xl sm:text-4xl xs:text-3xl'}>
+                                    <AnimatedNumbers value={50}/>+
                                 </span>
-                                <h2 className={'text-xl'}>
+                                <h2 className={'text-xl xl:text-center md:text-lg sm:text-base xs:text-sm'}>
                                     Projects
                                 </h2>
                             </div>
-                            <div className={'flex flex-col'}>
-                                <span className={'text-6xl font-bold'}>
-                                    <AnimatedNumbers value={50} />+
+                            <div className={'flex flex-col items-end justify-center xl:items-center'}>
+                                <span className={'text-6xl font-bold md:text-6xl sm:text-4xl xs:text-3xl'}>
+                                    <AnimatedNumbers value={50}/>+
                                 </span>
-                                <h2 className={'text-xl'}>
+                                <h2 className={'text-xl xl:text-center md:text-lg sm:text-base xs:text-sm'}>
                                     Projects
                                 </h2>
                             </div>
-                            <div className={'flex flex-col'}>
-                                <span className={'text-6xl font-bold'}>
-                                    <AnimatedNumbers value={50} />+
+                            <div className={'flex flex-col items-end justify-center xl:items-center'}>
+                                <span className={'text-6xl font-bold md:text-6xl sm:text-4xl xs:text-3xl'}>
+                                    <AnimatedNumbers value={50}/>+
                                 </span>
-                                <h2 className={'text-xl'}>
+                                <h2 className={'text-xl xl:text-center md:text-lg sm:text-base xs:text-sm'}>
                                     Projects
                                 </h2>
                             </div>
                         </div>
                     </div>
                     {/*<Skills />*/}
-                    <Experience />
+                    <Experience/>
                 </Layout>
             </main>
         </>
