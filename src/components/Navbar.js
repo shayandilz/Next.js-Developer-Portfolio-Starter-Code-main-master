@@ -61,7 +61,7 @@ const Navbar = () => {
                 <span
                     className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5 transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
                 <span
-                    className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm translate-y-0.5 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                    className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
             <div className={'w-full flex justify-between items-center lg:hidden'}>
                 <nav className={'flex gap-4'}>
@@ -127,7 +127,7 @@ const Navbar = () => {
                                 <LinkedInIcon/>
                             </Link>
                             <button onClick={() => setMode(mode === "light" ? 'dark' : 'light')}
-                                    className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === "light" ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+                                    className={`ml-3 w-9 flex items-center justify-center rounded-full p-1 ${mode === "light" ? 'bg-dark text-light' : 'bg-light text-dark'}`}
                             >
                                 {
                                     mode === 'dark' ?
