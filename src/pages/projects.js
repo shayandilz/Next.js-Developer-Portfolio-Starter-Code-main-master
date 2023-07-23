@@ -7,6 +7,7 @@ import Image from "next/image";
 import {GithubIcon} from "@/components/Icons";
 import Project1 from '../../public/images/projects/agency-website-cover-image.jpg'
 import {motion} from "framer-motion";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image)
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
@@ -78,6 +79,7 @@ const Projects = () => {
                 <title>Projects</title>
                 <meta name='description' content='description'/>
             </Head>
+            <TransitionEffect />
             <main className={'w-full mb-16 flex flex-col items-center justify-center'}>
                 <Layout className={'pt-16'}>
                     <AnimatedText className={'mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'} text='Projects'/>
